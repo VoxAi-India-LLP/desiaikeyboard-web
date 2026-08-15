@@ -1,0 +1,7 @@
+{
+  "name": "Desi AI Keyboard",
+  "description": "Product launch website for Desi AI Keyboard - India's AI-powered multilingual Android keyboard supporting all major Indian scripts, voice typing, transliteration, and rich personalization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
