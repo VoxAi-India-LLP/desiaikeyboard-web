@@ -1,9 +1,9 @@
 import { LanguageItem, FeatureItem, ThemeOption, ScreenshotSpec, FAQItem, TestimonialItem, PermissionDetail, AppConfig } from '../types';
 
 export const DEFAULT_CONFIG: AppConfig = {
-  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.AnuvadiniAIWritoKeyboard',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.desiai.keyboard',
   contactEmail: 'support@desiaikeyboard.com',
-  privacyPolicyUrl: '#privacy',
+  privacyPolicyUrl: '/privacy-policy',
   termsOfServiceUrl: '#terms',
   permissionGuideUrl: '#permissions',
   dataDeletionUrl: '#data-deletion',

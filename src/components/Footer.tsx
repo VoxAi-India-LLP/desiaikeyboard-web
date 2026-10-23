@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { AshokaChakra } from './AshokaChakra';
 import { AppConfig } from '../types';
-import logoImg from '../../assets/Web_logo.png';
+import logoImg from '../../assets/desiai_web_logo.png';
 
 interface FooterProps {
   config: AppConfig;

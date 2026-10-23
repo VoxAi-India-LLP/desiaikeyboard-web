@@ -22,8 +22,13 @@ import { AshokaChakra } from './components/AshokaChakra';
 import { DownloadModal, ContactModal, LegalModal } from './components/Modals';
 import { DEFAULT_CONFIG } from './data/content';
 import { AppConfig } from './types';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 
 export default function App() {
+  if (window.location.pathname.replace(/\/$/, '') === '/privacy-policy') {
+    return <PrivacyPolicyPage />;
+  }
+
   const [config] = useState<AppConfig>(DEFAULT_CONFIG);
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -95,7 +100,7 @@ export default function App() {
         {/* 10. Privacy and Permissions */}
         <PrivacySection
           config={config}
-          onOpenLegalModal={(type) => setLegalModalType(type)}
+          onOpenLegalModal={(type) => type === 'privacy' ? window.location.assign('/privacy-policy') : setLegalModalType(type)}
         />
 
         {/* 11. How to Get Started (4 Steps) */}
@@ -116,7 +121,7 @@ export default function App() {
         config={config}
         onOpenDownloadModal={() => setDownloadModalOpen(true)}
         onOpenContactModal={() => setContactModalOpen(true)}
-        onOpenLegalModal={(type) => setLegalModalType(type)}
+        onOpenLegalModal={(type) => type === 'privacy' ? window.location.assign('/privacy-policy') : setLegalModalType(type)}
       />
 
       {/* Interactive Modals */}

@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { AppConfig } from '../types';
 import { RippleButton, RippleLink } from './RippleButton';
-import logoImg from '../../assets/Web_logo.png';
+import logoImg from '../../assets/desiai_web_logo.png';
 
 interface DownloadModalProps {
   isOpen: boolean;

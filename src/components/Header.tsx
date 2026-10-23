@@ -12,9 +12,9 @@ import {
   Languages
 } from 'lucide-react';
 import { AshokaChakra } from './AshokaChakra';
-import { RippleButton } from './RippleButton';
+import { RippleButton, RippleLink } from './RippleButton';
 import { AppConfig } from '../types';
-import logoImg from '../../assets/Web_logo.png';
+import logoImg from '../../assets/desiai_web_logo.png';
 
 interface HeaderProps {
   config: AppConfig;
@@ -122,8 +122,10 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
 
             {/* Google Play Download Button */}
-            <RippleButton
-              onClick={onOpenDownloadModal}
+            <RippleLink
+              href={config.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               id="header-download-btn"
               rippleColor="rgba(255, 255, 255, 0.4)"
               className="group relative inline-flex items-center justify-center space-x-2 rounded-full bg-gradient-to-r from-[#000080] via-[#0F172A] to-[#172033] px-4 sm:px-5 py-2 text-xs font-bold text-white shadow-md hover:shadow-lg transition-shadow"
@@ -132,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FF9933] via-white to-[#138808]"></span>
               <Download className="h-3.5 w-3.5 text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
               <span>Get on Play Store</span>
-            </RippleButton>
+            </RippleLink>
 
             {/* Mobile Hamburger Button */}
             <button
@@ -170,17 +172,17 @@ export const Header: React.FC<HeaderProps> = ({
               ))}
 
               <div className="pt-3 border-t border-slate-200 flex flex-col space-y-2">
-                <RippleButton
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenDownloadModal();
-                  }}
+                <RippleLink
+                  href={config.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
                   rippleColor="rgba(255, 255, 255, 0.4)"
                   className="w-full flex items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-[#FF9933] to-[#138808] p-3 text-xs font-bold text-white shadow-md"
                 >
                   <Download className="h-4 w-4" />
                   <span>Download for Android (Google Play)</span>
-                </RippleButton>
+                </RippleLink>
 
                 <button
                   onClick={() => {

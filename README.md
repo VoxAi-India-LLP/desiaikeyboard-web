@@ -136,7 +136,7 @@ Update the default configuration in `src/data/content.ts` or via the interactive
 
 ```typescript
 export const DEFAULT_CONFIG: AppConfig = {
-  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.AnuvadiniAIWritoKeyboard',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.desiai.keyboard',
   contactEmail: 'support@desiaikeyboard.com',
   privacyPolicyUrl: '#privacy',
   termsOfServiceUrl: '#terms',
