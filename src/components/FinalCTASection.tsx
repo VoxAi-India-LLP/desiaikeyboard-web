@@ -42,11 +42,11 @@ export const FinalCTASection: React.FC<FinalCTAProps> = ({
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-                Ready to Type the Desi Way?
+                Ready to Type the Bharat Way?
               </h2>
 
               <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
-                Download Desi AI Keyboard and make every conversation smarter, faster and more expressive across all Indian languages.
+                Download Bharat AI Keyboard and make every conversation smarter, faster and more expressive across all Indian languages.
               </p>
 
               {/* Action Buttons */}
@@ -93,7 +93,7 @@ export const FinalCTASection: React.FC<FinalCTAProps> = ({
                   <Smartphone className="h-10 w-10 text-[#000080]" />
                 </div>
                 <div className="mt-4 text-base font-extrabold text-[#172033]">
-                  Get Desi AI Keyboard
+                  Get Bharat AI Keyboard
                 </div>
                 <div className="mt-1 text-xs text-slate-500">
                   Available free for Android 8.0+

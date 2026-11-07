@@ -1,12 +1,12 @@
-# Desi AI Keyboard – Product Launch Website
+# Bharat AI Keyboard – Product Launch Website
 
-A modern, premium, responsive product-launch website for **Desi AI Keyboard**—India’s AI-powered multilingual Android mobile keyboard supporting 12+ Indian scripts, handwriting recognition, speech-to-text voice typing, live translation, and rich personalization.
+A modern, premium, responsive product-launch website for **Bharat AI Keyboard**—India’s AI-powered multilingual Android mobile keyboard supporting 12+ Indian scripts, handwriting recognition, speech-to-text voice typing, live translation, and rich personalization.
 
 ---
 
 ## 🇮🇳 Brand Identity & Visual Theme
 
-- **Tagline**: *Type Smart. Speak Freely. Express Desi.*
+- **Tagline**: *Type Smart. Speak Freely. Express Bharat.*
 - **Supporting Line**: *One intelligent keyboard for India’s languages, conversations and creativity.*
 - **Tricolour Palette**:
   - **Saffron**: `#FF9933`
@@ -21,7 +21,7 @@ A modern, premium, responsive product-launch website for **Desi AI Keyboard**—
 
 ## 🚀 Features & Sections Built
 
-1. **Sticky Navigation Bar**: Desi AI Keyboard logo, links to Features, Languages, AI Tools, Personalization, Screenshots, FAQs, Contact, and Google Play download CTA.
+1. **Sticky Navigation Bar**: Bharat AI Keyboard logo, links to Features, Languages, AI Tools, Personalization, Screenshots, FAQs, Contact, and Google Play download CTA.
 2. **Hero Section**: High-impact headline, live interactive Android phone typing mockup, floating native script greeting badges (नमस्ते, வணக்கம், Hello, ନମସ୍କାର, سلام - RTL), and trust badges.
 3. **13 Core Features**: Icon cards with category filters (Input, AI & Language, Expression & Media, Productivity) and detail modal.
 4. **Multilingual Support**: Interactive showcase of 12 Indian languages with native scripts, RTL Urdu layout, upcoming languages card, and a live Transliteration playground widget.
@@ -30,13 +30,13 @@ A modern, premium, responsive product-launch website for **Desi AI Keyboard**—
 7. **Express Yourself**: Media hub for Desi stickers, trending GIFs, emoji search, custom sticker creator studio, and stylish font generator.
 8. **Theme Gallery**: 6 themes (*Indian Tricolour, Dark Mode, Minimal White, Cyber Neon, Festival of Lights, Custom Photo*) with live keyboard preview.
 9. **Product Screenshots Gallery**: 9 mockups with recommended screenshot dimensions (`1080 × 2400 px` Android 9:19.5 aspect ratio) and asset paths.
-10. **Why Choose Desi AI Keyboard**: 7 clear, transparent benefits for everyday Indian communicators.
+10. **Why Choose Bharat AI Keyboard**: 7 clear, transparent benefits for everyday Indian communicators.
 11. **Privacy & Permissions**: Plain-language breakdown of Microphone, Storage, Contacts (future feature), and Internet permissions with dedicated policy modal.
 12. **How to Get Started**: 4-step Android onboarding guide with system settings walkthrough.
 13. **Testimonials**: 3 user scenario cards with clear placeholder notice for verified post-launch reviews.
 14. **Frequently Asked Questions**: Accessible 10-question FAQ accordion with search and category filters.
 15. **Final Call to Action**: Bold tricolour gradient banner with Google Play CTA, interactive QR Code scanner card, and contact team button.
-16. **Footer**: Navigation, legal links, email (`support@desiaikeyboard.com`), social links, copyright 2026, and website language switcher.
+16. **Footer**: Navigation, legal links, email (`support@bharataikeyboard.com`), social links, copyright 2026, and website language switcher.
 17. **Configuration Panel**: Floating control tool to test Google Play URLs, contact email, and themes in real-time.
 
 ---
@@ -52,7 +52,7 @@ A modern, premium, responsive product-launch website for **Desi AI Keyboard**—
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd desi-ai-keyboard-website
+cd bharat-ai-keyboard-website
 
 # Install dependencies
 npm install
@@ -137,7 +137,7 @@ Update the default configuration in `src/data/content.ts` or via the interactive
 ```typescript
 export const DEFAULT_CONFIG: AppConfig = {
   playStoreUrl: 'https://play.google.com/store/apps/details?id=com.desiai.keyboard',
-  contactEmail: 'support@desiaikeyboard.com',
+  contactEmail: 'support@bharataikeyboard.com',
   privacyPolicyUrl: '#privacy',
   termsOfServiceUrl: '#terms',
   permissionGuideUrl: '#permissions',
@@ -147,15 +147,15 @@ export const DEFAULT_CONFIG: AppConfig = {
 
 ### 2. Replacing Screenshot Placeholders with Real Screenshots
 Place your final `1080 × 2400 px` PNG screenshots in the `public/screenshots/` folder matching these filenames:
-- `desi_keyboard_home_1080x2400.png`
-- `desi_keyboard_languages_1080x2400.png`
-- `desi_keyboard_voice_1080x2400.png`
-- `desi_keyboard_handwriting_1080x2400.png`
-- `desi_keyboard_translation_1080x2400.png`
-- `desi_keyboard_emoji_gif_1080x2400.png`
-- `desi_keyboard_custom_stickers_1080x2400.png`
-- `desi_keyboard_themes_1080x2400.png`
-- `desi_keyboard_drawer_1080x2400.png`
+- `bharat_keyboard_home_1080x2400.png`
+- `bharat_keyboard_languages_1080x2400.png`
+- `bharat_keyboard_voice_1080x2400.png`
+- `bharat_keyboard_handwriting_1080x2400.png`
+- `bharat_keyboard_translation_1080x2400.png`
+- `bharat_keyboard_emoji_gif_1080x2400.png`
+- `bharat_keyboard_custom_stickers_1080x2400.png`
+- `bharat_keyboard_themes_1080x2400.png`
+- `bharat_keyboard_drawer_1080x2400.png`
 
 ---
 

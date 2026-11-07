@@ -14,7 +14,7 @@ import {
 import { AshokaChakra } from './AshokaChakra';
 import { RippleButton, RippleLink } from './RippleButton';
 import { AppConfig } from '../types';
-import logoImg from '../../assets/desiai_web_logo.png';
+const logoImg = '/bharatai_keyboard_logo.png';
 
 interface HeaderProps {
   config: AppConfig;
@@ -69,12 +69,12 @@ export const Header: React.FC<HeaderProps> = ({
           <a
             href="#"
             className="group flex items-center space-x-2.5 focus:outline-hidden"
-            aria-label="Desi AI Keyboard Home"
+            aria-label="Bharat AI Keyboard Home"
           >
             <div className="relative flex h-10 w-10 overflow-hidden items-center justify-center rounded-xl bg-slate-900 shadow-md transition-transform group-hover:scale-105 border border-slate-700/50">
               <img
                 src={logoImg}
-                alt="Desi AI Keyboard App Logo"
+                alt="Bharat AI Keyboard App Logo"
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex flex-col">
               <div className="flex items-center space-x-1.5">
                 <span className="text-lg font-extrabold tracking-tight text-[#172033]">
-                  Desi AI
+                  Bharat AI
                 </span>
                 <span className="rounded-sm bg-gradient-to-r from-[#FF9933] to-[#138808] px-1.5 py-0.2 text-[10px] font-bold text-white uppercase tracking-wider">
                   Keyboard
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
               <span className="text-[10px] font-medium text-slate-500 flex items-center gap-1">
                 <AshokaChakra size={10} strokeColor="#000080" />
-                Type Smart • Express Desi
+                Type Smart • Express Bharat
               </span>
             </div>
           </a>

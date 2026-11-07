@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://desiaikeyboard.com/</loc>
+    <loc>https://bharataikeyboard.com/</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://desiaikeyboard.com/logo.png</image:loc>
-      <image:title>Desi AI Keyboard - Multilingual Android Keyboard</image:title>
-      <image:caption>Desi AI Keyboard supporting 12+ Indian scripts, AI transliteration, and voice typing</image:caption>
+      <image:loc>https://bharataikeyboard.com/logo.png</image:loc>
+      <image:title>Bharat AI Keyboard - Multilingual Android Keyboard</image:title>
+      <image:caption>Bharat AI Keyboard supporting 12+ Indian scripts, AI transliteration, and voice typing</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://desiaikeyboard.com/privacy-policy</loc>
+    <loc>https://bharataikeyboard.com/privacy-policy</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

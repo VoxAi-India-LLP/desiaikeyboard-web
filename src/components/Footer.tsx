@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { AshokaChakra } from './AshokaChakra';
 import { AppConfig } from '../types';
-import logoImg from '../../assets/desiai_web_logo.png';
+const logoImg = '/bharatai_keyboard_logo.png';
 
 interface FooterProps {
   config: AppConfig;
@@ -62,13 +62,13 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="relative flex h-10 w-10 overflow-hidden items-center justify-center rounded-xl bg-slate-900 shadow-md border border-slate-700">
                 <img
                   src={logoImg}
-                  alt="Desi AI Keyboard Logo"
+                  alt="Bharat AI Keyboard Logo"
                   className="h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="flex items-center space-x-1.5">
-                <span className="text-lg font-extrabold text-white tracking-tight">Desi AI</span>
+                <span className="text-lg font-extrabold text-white tracking-tight">Bharat AI</span>
                 <span className="rounded bg-gradient-to-r from-[#FF9933] to-[#138808] px-1.5 py-0.2 text-[9px] font-bold text-white uppercase">
                   Keyboard
                 </span>
@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="text-xs text-amber-400 font-semibold tracking-wide">
-              Type Smart. Speak Freely. Express Desi.
+              Type Smart. Speak Freely. Express Bharat.
             </p>
 
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
@@ -90,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({
                 className="inline-flex items-center space-x-2 rounded-xl bg-white/10 border border-white/20 px-4 py-2 text-xs font-bold text-white hover:bg-white/20 transition-colors"
               >
                 <Download className="h-4 w-4 text-emerald-400" />
-                <span>Get Desi AI Keyboard on Play Store</span>
+                <span>Get Bharat AI Keyboard on Play Store</span>
               </button>
             </div>
 
@@ -163,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           
           <div className="flex items-center space-x-2">
-            <span>© 2026 Desi AI Keyboard. All rights reserved.</span>
+            <span>© 2026 Bharat AI Keyboard. All rights reserved.</span>
             <span>•</span>
             <span className="text-slate-400 flex items-center gap-1.5">
               <AshokaChakra size={14} animate={true} strokeColor="#93C5FD" />

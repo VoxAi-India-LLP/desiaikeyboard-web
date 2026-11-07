@@ -135,21 +135,21 @@ export const HowToStartSection: React.FC<{ onOpenDownloadModal: () => void }> = 
     {
       step: '1',
       title: 'Download App',
-      desc: 'Get Desi AI Keyboard free directly from the Google Play Store on your Android device.',
+      desc: 'Get Bharat AI Keyboard free directly from the Google Play Store on your Android device.',
       actionText: 'Install via Play Store',
       icon: '📥',
     },
     {
       step: '2',
       title: 'Enable in Settings',
-      desc: 'Open Android Settings ➔ System ➔ Languages & Input ➔ On-screen keyboard and toggle Desi AI Keyboard ON.',
+      desc: 'Open Android Settings ➔ System ➔ Languages & Input ➔ On-screen keyboard and toggle Bharat AI Keyboard ON.',
       actionText: 'Android System Settings',
       icon: '⚙️',
     },
     {
       step: '3',
       title: 'Select as Default',
-      desc: 'Tap the keyboard switcher or prompt to choose Desi AI Keyboard as your active input method.',
+      desc: 'Tap the keyboard switcher or prompt to choose Bharat AI Keyboard as your active input method.',
       actionText: 'Set Active Input',
       icon: '📱',
     },
@@ -157,7 +157,7 @@ export const HowToStartSection: React.FC<{ onOpenDownloadModal: () => void }> = 
       step: '4',
       title: 'Choose Languages & Theme',
       desc: 'Pick your preferred native scripts (Hindi, Odia, Tamil, Urdu, etc.) and apply your favorite theme.',
-      actionText: 'Ready to Express Desi',
+      actionText: 'Ready to Express Bharat',
       icon: '🎨',
     },
   ];

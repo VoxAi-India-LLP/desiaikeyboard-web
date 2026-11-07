@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { AppConfig } from '../types';
 import { RippleButton, RippleLink } from './RippleButton';
-import logoImg from '../../assets/desiai_web_logo.png';
+const logoImg = '/bharatai_keyboard_logo.png';
 
 interface DownloadModalProps {
   isOpen: boolean;
@@ -48,12 +48,12 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
             <div className="mx-auto flex h-14 w-14 overflow-hidden items-center justify-center rounded-2xl bg-slate-900 shadow-md mb-3 border border-slate-200">
               <img
                 src={logoImg}
-                alt="Desi AI Keyboard"
+                alt="Bharat AI Keyboard"
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#172033]">Download Desi AI Keyboard</h3>
+            <h3 className="text-xl font-bold text-[#172033]">Download Bharat AI Keyboard</h3>
             <p className="text-xs text-slate-500 mt-1">Available free for Android 8.0 Oreo and newer</p>
           </div>
 
@@ -241,7 +241,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, docType, onClose
       icon: Lock,
       body: (
         <div className="space-y-3 text-xs leading-relaxed text-slate-600">
-          <p><strong>1. Our Privacy Commitment:</strong> Desi AI Keyboard is built with user privacy as a foundational principle. Keystrokes, passwords, and private messages are processed on-device for typing predictions whenever possible.</p>
+          <p><strong>1. Our Privacy Commitment:</strong> Bharat AI Keyboard is built with user privacy as a foundational principle. Keystrokes, passwords, and private messages are processed on-device for typing predictions whenever possible.</p>
           <p><strong>2. Online Services:</strong> Features such as GIF lookup, online translation engines, and cloud sticker downloads require network access to fetch results from secured servers.</p>
           <p><strong>3. Voice Data:</strong> When voice typing is activated by pressing the microphone icon, audio is temporarily processed to return transcribed text.</p>
           <p><strong>4. Data Retention:</strong> We do not sell personal typing histories to third parties. Users can clear their learned dictionary words at any time in keyboard settings.</p>
@@ -250,11 +250,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, docType, onClose
     },
     terms: {
       title: 'Terms of Service',
-      subtitle: 'Standard software terms for using Desi AI Keyboard',
+      subtitle: 'Standard software terms for using Bharat AI Keyboard',
       icon: FileText,
       body: (
         <div className="space-y-3 text-xs leading-relaxed text-slate-600">
-          <p><strong>1. License:</strong> Desi AI Keyboard grants you a personal, non-exclusive, non-transferable license to use the application on compatible Android devices.</p>
+          <p><strong>1. License:</strong> Bharat AI Keyboard grants you a personal, non-exclusive, non-transferable license to use the application on compatible Android devices.</p>
           <p><strong>2. Acceptable Use:</strong> You agree not to reverse engineer or modify the application for malicious purposes.</p>
           <p><strong>3. Updates:</strong> Feature improvements, language script packs, and security patches may be delivered via Google Play store updates.</p>
         </div>
@@ -279,7 +279,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, docType, onClose
       body: (
         <div className="space-y-3 text-xs leading-relaxed text-slate-600">
           <p><strong>• Clear Local Dictionary:</strong> Open Keyboard Settings ➔ Advanced ➔ "Clear Learned Words & Dictionary" to wipe on-device suggestions instantly.</p>
-          <p><strong>• Server Data Purge:</strong> If you used cloud backup or synced themes, email support@desiaikeyboard.com with the subject "Data Deletion Request" and your registered device ID for prompt deletion.</p>
+          <p><strong>• Server Data Purge:</strong> If you used cloud backup or synced themes, email support@bharataikeyboard.com with the subject "Data Deletion Request" and your registered device ID for prompt deletion.</p>
         </div>
       ),
     },

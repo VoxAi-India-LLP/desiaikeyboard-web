@@ -18,7 +18,7 @@ import { STYLISH_FONTS_DEMO, THEMES } from '../data/content';
 
 export const ExpressYourselfSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'stickers' | 'gifs' | 'emoji' | 'custom-stickers' | 'fonts'>('stickers');
-  const [fontTestText, setFontTestText] = useState('Desi AI Keyboard');
+  const [fontTestText, setFontTestText] = useState('Bharat AI Keyboard');
   const [copiedFont, setCopiedFont] = useState<string | null>(null);
 
   const desiStickers = [

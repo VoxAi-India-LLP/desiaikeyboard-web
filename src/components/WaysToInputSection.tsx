@@ -351,7 +351,7 @@ export const WaysToInputSection: React.FC = () => {
                   <div className="my-4 rounded-xl bg-slate-800/80 p-4 border border-slate-700/60">
                     <div className="text-[11px] text-slate-400">Glide Path Input (Swiped):</div>
                     <div className="text-lg font-mono text-amber-400 font-bold mt-1">k-y-a h-a-a-l h-a-i</div>
-                    <div className="mt-2 text-[11px] text-slate-400">Desi AI Resolved Native Output:</div>
+                    <div className="mt-2 text-[11px] text-slate-400">Bharat AI Resolved Native Output:</div>
                     <div className="text-2xl font-bold text-white font-devanagari mt-0.5">क्या हाल है ✓</div>
                   </div>
 

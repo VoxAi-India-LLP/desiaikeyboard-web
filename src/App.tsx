@@ -94,7 +94,7 @@ export default function App() {
         {/* 8. Product Screenshots Gallery (9 screens with 1080x2400 specs) */}
         <ScreenshotsSection />
 
-        {/* 9. Why Choose Desi AI Keyboard (7 benefits) */}
+        {/* 9. Why Choose Bharat AI Keyboard (7 benefits) */}
         <WhyChooseSection />
 
         {/* 10. Privacy and Permissions */}

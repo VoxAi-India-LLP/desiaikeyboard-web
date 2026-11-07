@@ -49,7 +49,7 @@ export const InteractivePhoneMockup: React.FC<InteractivePhoneMockupProps> = ({
   const [englishTranslation, setEnglishTranslation] = useState('How are you brother?');
   const [activeSuggestion, setActiveSuggestion] = useState('सब बढ़िया');
   const [chatMessages, setChatMessages] = useState<Array<{ sender: 'user' | 'other'; text: string; subtext?: string; time: string }>>([
-    { sender: 'other', text: 'Hey! Are you using the new Desi AI Keyboard?', time: '10:28 AM' },
+    { sender: 'other', text: 'Hey! Are you using the new Bharat AI Keyboard?', time: '10:28 AM' },
     { sender: 'user', text: 'Haan bilkul! It types in all Indian languages super fast 🚀', subtext: 'हाँ बिल्कुल! It types in all Indian languages super fast 🚀', time: '10:29 AM' },
   ]);
 
@@ -180,7 +180,7 @@ export const InteractivePhoneMockup: React.FC<InteractivePhoneMockupProps> = ({
             </div>
           </div>
 
-          {/* App Header (Desi Chat / WhatsApp-style mock) */}
+          {/* App Header (Bharat Chat / WhatsApp-style mock) */}
           <div className="flex items-center justify-between border-b border-slate-800 bg-[#161F30] px-3.5 py-2.5">
             <div className="flex items-center space-x-2.5">
               <button aria-label="Go back" className="text-slate-400 hover:text-white">
@@ -192,7 +192,7 @@ export const InteractivePhoneMockup: React.FC<InteractivePhoneMockupProps> = ({
               </div>
               <div>
                 <div className="text-xs font-bold text-white flex items-center gap-1">
-                  Desi Chat
+                  Bharat Chat
                   <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">AI Live</span>
                 </div>
                 <div className="text-[10px] text-emerald-400">
@@ -211,7 +211,7 @@ export const InteractivePhoneMockup: React.FC<InteractivePhoneMockupProps> = ({
           <div className="flex-1 space-y-2.5 overflow-y-auto bg-gradient-to-b from-[#0F172A] to-[#0A0F1D] p-3 text-xs">
             <div className="my-1 text-center">
               <span className="rounded-full bg-slate-800/80 px-2.5 py-0.5 text-[9px] text-slate-400 border border-slate-700/50">
-                End-to-End Encrypted • Powered by Desi AI
+                End-to-End Encrypted • Powered by Bharat AI
               </span>
             </div>
 
@@ -282,7 +282,7 @@ export const InteractivePhoneMockup: React.FC<InteractivePhoneMockupProps> = ({
             </div>
           </div>
 
-          {/* Interactive Desi AI Keyboard Unit */}
+          {/* Interactive Bharat AI Keyboard Unit */}
           <div className={`relative flex flex-col ${activeTheme.keyboardBg} p-2 transition-all duration-300 select-none border-t border-slate-800/30`}>
             
             {/* Keyboard Top AI Toolbar */}

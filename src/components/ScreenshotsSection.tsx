@@ -41,7 +41,7 @@ export const ScreenshotsSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#172033]">
-            See Desi AI Keyboard in Action
+            See Bharat AI Keyboard in Action
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600">
@@ -130,7 +130,7 @@ export const ScreenshotsSection: React.FC = () => {
                   <div className="h-[520px] overflow-hidden rounded-[24px] bg-white border border-slate-800">
                     <img
                       src={selectedScreenshot.imagePath}
-                      alt="Desi AI Keyboard running in a WhatsApp conversation"
+                      alt="Bharat AI Keyboard running in a WhatsApp conversation"
                       className="h-full w-full object-cover object-bottom"
                     />
                   </div>
@@ -140,7 +140,7 @@ export const ScreenshotsSection: React.FC = () => {
                   
                   {/* Status & Screen Title */}
                   <div className="flex items-center justify-between border-b border-slate-800 pb-2 text-[10px] text-slate-400">
-                    <span className="font-bold text-white">Desi AI: {selectedScreenshot.badge}</span>
+                    <span className="font-bold text-white">Bharat AI: {selectedScreenshot.badge}</span>
                     <span>10:30 • 5G</span>
                   </div>
 
@@ -226,7 +226,7 @@ export const WhyChooseSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#172033]">
-            Why Choose Desi AI Keyboard
+            Why Choose Bharat AI Keyboard
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600">

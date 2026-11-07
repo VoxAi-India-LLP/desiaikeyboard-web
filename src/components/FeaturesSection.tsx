@@ -217,49 +217,49 @@ const FEATURE_SPECS: Record<string, FeatureDetailSpec> = {
 const COMPARISON_ROWS = [
   {
     capability: 'Supported Indian Languages',
-    desiAI: '12+ Native Scripts + Hinglish',
+    bharatAI: '12+ Native Scripts + Hinglish',
     standardGboard: 'Basic Layouts only',
     otherKeyboards: '2–4 Languages',
     status: 'win'
   },
   {
     capability: 'Phonetic Hinglish Transliteration',
-    desiAI: 'Real-time On-Device AI Engine',
+    bharatAI: 'Real-time On-Device AI Engine',
     standardGboard: 'Partial / Cloud reliant',
     otherKeyboards: 'Limited / High typo rate',
     status: 'win'
   },
   {
     capability: 'Offline Voice & Handwriting Input',
-    desiAI: '100% Offline with regional dialects',
+    bharatAI: '100% Offline with regional dialects',
     standardGboard: 'Requires active internet',
     otherKeyboards: 'Not supported',
     status: 'win'
   },
   {
     capability: 'Desi Memes & Festival Stickers',
-    desiAI: '10,000+ Curated Indian Stickers',
+    bharatAI: '10,000+ Curated Indian Stickers',
     standardGboard: 'Western-centric GIFs',
     otherKeyboards: 'Requires paid sticker packs',
     status: 'win'
   },
   {
     capability: 'On-Device Keystroke Privacy',
-    desiAI: 'Zero Keylogging • On-Device Only',
+    bharatAI: 'Zero Keylogging • On-Device Only',
     standardGboard: 'Telemetry analytics enabled',
     otherKeyboards: 'Third-party cloud servers',
     status: 'win'
   },
   {
     capability: 'Custom Photo Sticker Studio',
-    desiAI: 'Built-in 1-Tap AI Cutout Studio',
+    bharatAI: 'Built-in 1-Tap AI Cutout Studio',
     standardGboard: 'External app required',
     otherKeyboards: 'Not available',
     status: 'win'
   },
   {
     capability: 'Indian Cultural & Tricolour Themes',
-    desiAI: '6+ Curated Cultural Themes',
+    bharatAI: '6+ Curated Cultural Themes',
     standardGboard: 'Plain solid colors',
     otherKeyboards: 'Ad-supported theme packs',
     status: 'win'
@@ -393,7 +393,7 @@ export const FeaturesSection: React.FC = () => {
   const [soundFeedback, setSoundFeedback] = useState(true);
 
   // 12. Fancy Stylish Fonts State
-  const [customFontInput, setCustomFontInput] = useState('Desi AI Keyboard');
+  const [customFontInput, setCustomFontInput] = useState('Bharat AI Keyboard');
   const [copiedFontIdx, setCopiedFontIdx] = useState<number | null>(null);
 
   // 13. App Drawer & Productivity State
@@ -402,7 +402,7 @@ export const FeaturesSection: React.FC = () => {
   const [clipboardItems, setClipboardItems] = useState([
     { id: 1, text: 'UPI ID: paytmqr2810@paytm', pinned: true },
     { id: 2, text: 'OTP: 839201', pinned: false },
-    { id: 3, text: 'https://desiaikeyboard.com/share', pinned: false }
+    { id: 3, text: 'https://bharataikeyboard.com/share', pinned: false }
   ]);
   const [newClipboardText, setNewClipboardText] = useState('');
 
@@ -777,7 +777,7 @@ export const FeaturesSection: React.FC = () => {
                     ? 'bg-[#000080] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
-                title="Compare Desi AI Keyboard with competitors"
+                title="Compare Bharat AI Keyboard with competitors"
               >
                 <Table className="h-3.5 w-3.5" />
                 <span>Capability Matrix</span>
@@ -907,7 +907,7 @@ export const FeaturesSection: React.FC = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-700 uppercase">
-                        Virtual Desi AI Keyboard:
+                        Virtual Bharat AI Keyboard:
                       </span>
                       <div className="flex items-center space-x-2">
                         <span className="text-[11px] text-slate-500 font-medium">Script:</span>
@@ -1902,7 +1902,7 @@ export const FeaturesSection: React.FC = () => {
             <div className="p-6 bg-gradient-to-r from-[#000080] to-[#172033] text-white">
               <h3 className="text-xl font-bold">Comprehensive Keyboard Capability Matrix</h3>
               <p className="text-xs text-slate-300 mt-1">
-                How Desi AI Keyboard compares against standard global keyboards for Indian language communication.
+                How Bharat AI Keyboard compares against standard global keyboards for Indian language communication.
               </p>
             </div>
 
@@ -1911,7 +1911,7 @@ export const FeaturesSection: React.FC = () => {
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-bold uppercase tracking-wider text-slate-600">
                     <th className="py-4 px-6">Feature & Linguistic Capability</th>
-                    <th className="py-4 px-6 text-[#000080] bg-amber-50/80 font-extrabold">Desi AI Keyboard</th>
+                    <th className="py-4 px-6 text-[#000080] bg-amber-50/80 font-extrabold">Bharat AI Keyboard</th>
                     <th className="py-4 px-6 text-slate-500">Standard Gboard</th>
                     <th className="py-4 px-6 text-slate-500">Other Generic Keyboards</th>
                   </tr>
@@ -1924,7 +1924,7 @@ export const FeaturesSection: React.FC = () => {
                         <span>{row.capability}</span>
                       </td>
                       <td className="py-4 px-6 bg-amber-50/50 font-bold text-[#000080]">
-                        {row.desiAI}
+                        {row.bharatAI}
                       </td>
                       <td className="py-4 px-6 text-slate-600">
                         {row.standardGboard}

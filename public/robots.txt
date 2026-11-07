@@ -1,6 +1,6 @@
-# robots.txt for Desi AI Keyboard
+# robots.txt for Bharat AI Keyboard
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://desiaikeyboard.com/sitemap.xml
+Sitemap: https://bharataikeyboard.com/sitemap.xml

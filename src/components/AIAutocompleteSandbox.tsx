@@ -691,7 +691,7 @@ export const AIAutocompleteSandbox: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="font-extrabold tracking-wide text-slate-200 uppercase">
-                  Desi AI Neural Predictor Active
+                  Bharat AI Neural Predictor Active
                 </span>
               </div>
 

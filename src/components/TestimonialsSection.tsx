@@ -42,7 +42,7 @@ export const FAQSection: React.FC<{ onOpenContactModal: () => void }> = ({ onOpe
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600">
-            Everything you need to know about Desi AI Keyboard, supported Indian languages, permissions, and offline availability.
+            Everything you need to know about Bharat AI Keyboard, supported Indian languages, permissions, and offline availability.
           </p>
 
           {/* Search bar & Category filters */}

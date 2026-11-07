@@ -2,7 +2,7 @@ import { LanguageItem, FeatureItem, ThemeOption, ScreenshotSpec, FAQItem, Testim
 
 export const DEFAULT_CONFIG: AppConfig = {
   playStoreUrl: 'https://play.google.com/store/apps/details?id=com.desiai.keyboard',
-  contactEmail: 'support@desiaikeyboard.com',
+  contactEmail: 'support@bharataikeyboard.com',
   privacyPolicyUrl: '/privacy-policy',
   termsOfServiceUrl: '#terms',
   permissionGuideUrl: '#permissions',
@@ -326,7 +326,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'home-keyboard',
     title: 'Main Typing Interface',
     description: 'Clean keyboard layout with quick switch between English and regional scripts.',
-    imagePath: '/screenshots/desi-keyboard-whatsapp-1080x2400.jpg',
+    imagePath: '/screenshots/bharat-keyboard-whatsapp-1080x2400.jpg',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Home Screen',
     featureKey: 'Typing & Layout',
@@ -335,7 +335,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'language-selection',
     title: 'Language Switcher',
     description: 'One-tap seamless switching between 12+ Indian native scripts and Hinglish transliteration.',
-    imagePath: '/screenshots/desi_keyboard_languages_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_languages_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Multilingual',
     featureKey: 'Language Selector',
@@ -344,7 +344,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'voice-input',
     title: 'AI Multilingual Voice Input',
     description: 'High-accuracy speech-to-text with dialect tolerance and live audio waveform display.',
-    imagePath: '/screenshots/desi_keyboard_voice_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_voice_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Voice Mode',
     featureKey: 'Speech Recognition',
@@ -353,7 +353,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'handwriting-input',
     title: 'Handwriting Recognition',
     description: 'Smooth handwriting canvas for drawing complex Indian conjuncts and numerals naturally.',
-    imagePath: '/screenshots/desi_keyboard_handwriting_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_handwriting_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Stylus / Finger',
     featureKey: 'Handwriting Pad',
@@ -362,7 +362,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'translation',
     title: 'Inline Real-Time Translation',
     description: 'Live bilingual chat translator directly above the keyboard with source-target pairing.',
-    imagePath: '/screenshots/desi_keyboard_translation_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_translation_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Instant Translate',
     featureKey: 'Text & Voice Translation',
@@ -371,7 +371,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'emoji-gif',
     title: 'Emoji & GIF Discovery Panel',
     description: 'Desi festival stickers, cricket reaction GIFs, and regional memes categorized for quick sharing.',
-    imagePath: '/screenshots/desi_keyboard_emoji_gif_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_emoji_gif_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Media Hub',
     featureKey: 'GIFs & Stickers',
@@ -380,7 +380,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'custom-stickers',
     title: 'Custom Sticker Creator',
     description: 'Turn your camera photos or gallery snapshots into expressive personalized WhatsApp stickers.',
-    imagePath: '/screenshots/desi_keyboard_custom_stickers_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_custom_stickers_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Sticker Studio',
     featureKey: 'Sticker Maker',
@@ -389,7 +389,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'theme-selection',
     title: 'Theme Customization Studio',
     description: 'Browse tricolour, neon, dark, light, and custom wallpaper backgrounds with adjustable opacity.',
-    imagePath: '/screenshots/desi_keyboard_themes_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_themes_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Visual Themes',
     featureKey: 'Theme Gallery',
@@ -398,7 +398,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
     id: 'app-drawer',
     title: 'Quick Productivity Drawer',
     description: 'Instant clipboard history, currency calculator, one-tap text snippets, and mini utility tools.',
-    imagePath: '/screenshots/desi_keyboard_drawer_1080x2400.png',
+    imagePath: '/screenshots/bharat_keyboard_drawer_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Utilities',
     featureKey: 'Toolbar Drawer',
@@ -443,8 +443,8 @@ export const PERMISSIONS_DATA: PermissionDetail[] = [
 export const FAQ_LIST: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'Is Desi AI Keyboard available for Android?',
-    answer: 'Yes. Desi AI Keyboard is built natively for Android smartphones and tablets (supporting Android 8.0 Oreo and above). You can download and install it directly via Google Play.',
+    question: 'Is Bharat AI Keyboard available for Android?',
+    answer: 'Yes. Bharat AI Keyboard is built natively for Android smartphones and tablets (supporting Android 8.0 Oreo and above). You can download and install it directly via Google Play.',
     category: 'General',
   },
   {
@@ -455,7 +455,7 @@ export const FAQ_LIST: FAQItem[] = [
   },
   {
     id: 'faq-3',
-    question: 'How does transliteration work in Desi AI Keyboard?',
+    question: 'How does transliteration work in Bharat AI Keyboard?',
     answer: 'Transliteration allows you to type phonetically using English alphabets (e.g. typing "namaste", "dhanyavaad", or "shukriya") and the keyboard automatically converts your input into the corresponding native script characters (नमस्ते, धन्यवाद, شکریہ) in real time.',
     category: 'AI & Features',
   },
@@ -480,7 +480,7 @@ export const FAQ_LIST: FAQItem[] = [
   {
     id: 'faq-7',
     question: 'How can I change the keyboard theme?',
-    answer: 'Tap the palette icon on the keyboard toolbar or open Desi AI Keyboard settings on your phone. You can choose from Indian Tricolour, Dark Mode, Minimal White, Festive Gold, Cyber Neon, or choose any personal photo as your backdrop.',
+    answer: 'Tap the palette icon on the keyboard toolbar or open Bharat AI Keyboard settings on your phone. You can choose from Indian Tricolour, Dark Mode, Minimal White, Festive Gold, Cyber Neon, or choose any personal photo as your backdrop.',
     category: 'AI & Features',
   },
   {
@@ -498,7 +498,7 @@ export const FAQ_LIST: FAQItem[] = [
   {
     id: 'faq-10',
     question: 'How do I contact customer support or report feedback?',
-    answer: 'You can reach out to our dedicated support team directly via email at support@desiaikeyboard.com or use the Contact Form on this website. We welcome suggestions, script corrections, and feature requests from our community.',
+    answer: 'You can reach out to our dedicated support team directly via email at support@bharataikeyboard.com or use the Contact Form on this website. We welcome suggestions, script corrections, and feature requests from our community.',
     category: 'General',
   },
 ];
@@ -506,7 +506,7 @@ export const FAQ_LIST: FAQItem[] = [
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: 'test-1',
-    quote: "Desi AI Keyboard's Hindi transliteration has made chatting with family in Lucknow effortless. Switching from voice typing to Hinglish typing is so smooth.",
+    quote: "Bharat AI Keyboard's Hindi transliteration has made chatting with family in Lucknow effortless. Switching from voice typing to Hinglish typing is so smooth.",
     persona: "Aarav Sharma",
     useCase: "Daily Family & Business Chat",
     city: "New Delhi",
