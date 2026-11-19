@@ -9,7 +9,55 @@
     <image:image>
       <image:loc>https://bharataikeyboard.com/logo.png</image:loc>
       <image:title>Bharat AI Keyboard - Multilingual Android Keyboard</image:title>
-      <image:caption>Bharat AI Keyboard supporting 12+ Indian scripts, AI transliteration, and voice typing</image:caption>
+      <image:caption>Bharat AI Keyboard supporting 14 languages, AI transliteration, and voice typing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/hindi.jpg</image:loc>
+      <image:title>Bharat AI Hindi Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/bengali.jpg</image:loc>
+      <image:title>Bharat AI Bengali Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/tamil.jpg</image:loc>
+      <image:title>Bharat AI Tamil Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/telugu.jpg</image:loc>
+      <image:title>Bharat AI Telugu Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/marathi.jpg</image:loc>
+      <image:title>Bharat AI Marathi Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/gujarati.jpg</image:loc>
+      <image:title>Bharat AI Gujarati Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/kannada.jpg</image:loc>
+      <image:title>Bharat AI Kannada Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/malayalam.jpg</image:loc>
+      <image:title>Bharat AI Malayalam Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/odia.jpg</image:loc>
+      <image:title>Bharat AI Odia Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/punjabi.jpg</image:loc>
+      <image:title>Bharat AI Punjabi Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/assamese.jpg</image:loc>
+      <image:title>Bharat AI Assamese Keyboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bharataikeyboard.com/featured/nepali.jpg</image:loc>
+      <image:title>Bharat AI Nepali Keyboard</image:title>
     </image:image>
   </url>
   <url>

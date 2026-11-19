@@ -116,7 +116,7 @@ const FEATURE_SPECS: Record<string, FeatureDetailSpec> = {
   'text-translation': {
     highlights: [
       'Real-time bilingual chat translation embedded right above the keyboard',
-      'Supports 12+ Indian official languages + English, Spanish, Arabic & French',
+      'Supports 13 Indian languages + English, Spanish, Arabic & French',
       'Swap source and destination languages with a single tap'
     ],
     shortcut: 'Toolbar → Translation icon (⇄)',
@@ -217,7 +217,7 @@ const FEATURE_SPECS: Record<string, FeatureDetailSpec> = {
 const COMPARISON_ROWS = [
   {
     capability: 'Supported Indian Languages',
-    bharatAI: '12+ Native Scripts + Hinglish',
+    bharatAI: '14 Languages + Hinglish',
     standardGboard: 'Basic Layouts only',
     otherKeyboards: '2–4 Languages',
     status: 'win'
@@ -710,7 +710,7 @@ export const FeaturesSection: React.FC = () => {
               <span className="text-[11px] font-semibold text-slate-500">Zero Keystroke Logging</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-xl font-black text-[#FF9933]">12+ Scripts</span>
+              <span className="text-xl font-black text-[#FF9933]">14 Languages</span>
               <span className="text-[11px] font-semibold text-slate-500">Official Indian Languages</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">

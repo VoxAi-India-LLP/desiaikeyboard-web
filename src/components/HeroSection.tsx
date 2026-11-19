@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   const trustLabels = [
     { label: 'Made for India', icon: '🇮🇳', desc: 'Culturally crafted' },
-    { label: 'Multilingual', icon: '🗣️', desc: '12+ Indian scripts' },
+    { label: 'Multilingual', icon: '🗣️', desc: '14 languages' },
     { label: 'AI-Powered', icon: '✨', desc: 'Smart transliteration' },
     { label: 'Android 8.0+', icon: '📱', desc: 'Universal compatibility' },
   ];
@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 Made for Bharat
               </span>
               <span className="bg-slate-100 text-slate-600 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                12+ Indian Scripts
+                14 Languages
               </span>
             </motion.div>
 
@@ -175,7 +175,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <div className="flex items-center gap-4 flex-wrap">
                 <div className="text-left">
-                  <div className="text-xs font-bold text-[#172033]">12+ Languages</div>
+                  <div className="text-xs font-bold text-[#172033]">14 Languages</div>
                   <div className="text-[10px] text-slate-500">Native Transliteration</div>
                 </div>
                 <div className="h-4 w-[1px] bg-slate-200"></div>

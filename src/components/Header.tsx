@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="hidden sm:flex items-center space-x-1.5 text-xs font-medium text-slate-600 bg-amber-500/10 border border-amber-500/30 px-2.5 py-1.5 rounded-full hover:bg-amber-500/20 transition-colors"
             >
               <Globe className="h-3.5 w-3.5 text-[#FF9933]" />
-              <span className="text-[11px] font-semibold text-[#172033]">12+ Languages</span>
+              <span className="text-[11px] font-semibold text-[#172033]">14 Languages</span>
             </a>
 
             {/* Google Play Download Button */}

@@ -1,6 +1,6 @@
 # Bharat AI Keyboard – Product Launch Website
 
-A modern, premium, responsive product-launch website for **Bharat AI Keyboard**—India’s AI-powered multilingual Android mobile keyboard supporting 12+ Indian scripts, handwriting recognition, speech-to-text voice typing, live translation, and rich personalization.
+A modern, premium, responsive product-launch website for **Bharat AI Keyboard**—India’s AI-powered multilingual Android mobile keyboard supporting 14 languages, handwriting recognition, speech-to-text voice typing, live translation, and rich personalization.
 
 ---
 
@@ -24,7 +24,7 @@ A modern, premium, responsive product-launch website for **Bharat AI Keyboard**�
 1. **Sticky Navigation Bar**: Bharat AI Keyboard logo, links to Features, Languages, AI Tools, Personalization, Screenshots, FAQs, Contact, and Google Play download CTA.
 2. **Hero Section**: High-impact headline, live interactive Android phone typing mockup, floating native script greeting badges (नमस्ते, வணக்கம், Hello, ନମସ୍କାର, سلام - RTL), and trust badges.
 3. **13 Core Features**: Icon cards with category filters (Input, AI & Language, Expression & Media, Productivity) and detail modal.
-4. **Multilingual Support**: Interactive showcase of 12 Indian languages with native scripts, RTL Urdu layout, upcoming languages card, and a live Transliteration playground widget.
+4. **Multilingual Support**: Interactive showcase of 14 languages with native scripts, RTL Urdu layout, upcoming languages card, and a live Transliteration playground widget.
 5. **AI-Powered Communication**: 4-stage visual workflow (*Type/Speak ➔ Understand ➔ Correct/Translate ➔ Share*), 6 core AI capabilities, and connectivity transparency notice.
 6. **Ways to Input**: 3 interactive cards for *Type*, *Speak*, and *Write* with interactive stroke handwriting canvas and live audio waveform visualizer.
 7. **Express Yourself**: Media hub for Desi stickers, trending GIFs, emoji search, custom sticker creator studio, and stylish font generator.

@@ -273,7 +273,7 @@ export const WaysToInputSection: React.FC = () => {
 
                   <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                     <span>Press <kbd className="px-1 py-0.5 bg-slate-100 border border-slate-300 rounded font-mono text-[10px]">Esc</kbd> to close</span>
-                    <span className="text-emerald-700 font-medium font-mono text-[10px]">Works in all 12 scripts</span>
+                    <span className="text-emerald-700 font-medium font-mono text-[10px]">Works in all 14 languages</span>
                   </div>
                 </motion.div>
               )}

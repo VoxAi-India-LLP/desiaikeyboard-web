@@ -80,6 +80,19 @@ export const MultilingualSection: React.FC = () => {
       'dhanvaad': 'ਧੰਨਵਾਦ',
       'kya haal hai': 'ਕੀ ਹਾਲ ਹੈ',
     },
+    as: {
+      'kene asa': 'কেনে আছা',
+      'nomoskar': 'নমস্কাৰ',
+      'dhonyobad': 'ধন্যবাদ',
+      'kya haal hai': 'কেনে আছা (Assamese)',
+    },
+    ne: {
+      'k xa': 'के छ',
+      'kasto chha': 'कस्तो छ',
+      'namaste': 'नमस्ते',
+      'dhanyabad': 'धन्यवाद',
+      'kya haal hai': 'के छ (Nepali)',
+    },
     en: {
       'kya haal hai': 'How are you',
       'namaste': 'Hello / Greetings',
@@ -128,7 +141,7 @@ export const MultilingualSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 12 Language Cards Grid + Coming Soon Card */}
+        {/* 14 Language Cards Grid + Coming Soon Card */}
         <div className="mt-12 grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
           {SUPPORTED_LANGUAGES.map((lang) => {
             const isSelected = selectedLanguage.id === lang.id;
@@ -194,7 +207,7 @@ export const MultilingualSection: React.FC = () => {
                 More Indian Languages
               </h3>
               <p className="mt-1 text-xs text-slate-600">
-                Assamese, Maithili, Santali, Sanskrit, Kashmiri, Sindhi, and more regional dialects are actively being added.
+                Maithili, Santali, Sanskrit, Kashmiri, Sindhi, Konkani, and more regional dialects are actively being added.
               </p>
             </div>
             <div className="mt-3 text-[11px] font-semibold text-emerald-700 flex items-center gap-1">

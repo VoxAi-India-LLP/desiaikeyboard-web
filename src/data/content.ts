@@ -1,7 +1,7 @@
 import { LanguageItem, FeatureItem, ThemeOption, ScreenshotSpec, FAQItem, TestimonialItem, PermissionDetail, AppConfig } from '../types';
 
 export const DEFAULT_CONFIG: AppConfig = {
-  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.desiai.keyboard',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.bharataikeyboard.app',
   contactEmail: 'support@bharataikeyboard.com',
   privacyPolicyUrl: '/privacy-policy',
   termsOfServiceUrl: '#terms',
@@ -120,6 +120,26 @@ export const SUPPORTED_LANGUAGES: LanguageItem[] = [
     scriptFontClass: 'font-gurmukhi',
     sampleInput: 'ki haal hai',
     sampleOutput: 'ਕੀ ਹਾਲ ਹੈ',
+  },
+  {
+    id: 'as',
+    name: 'Assamese',
+    nativeName: 'অসমীয়া',
+    greeting: 'নমস্কাৰ',
+    greetingTransliteration: 'Nomoskar',
+    scriptFontClass: 'font-bengali',
+    sampleInput: 'kene asa',
+    sampleOutput: 'কেনে আছা',
+  },
+  {
+    id: 'ne',
+    name: 'Nepali',
+    nativeName: 'नेपाली',
+    greeting: 'नमस्ते',
+    greetingTransliteration: 'Namaste',
+    scriptFontClass: 'font-devanagari',
+    sampleInput: 'k xa',
+    sampleOutput: 'के छ',
   },
   {
     id: 'en',
@@ -334,7 +354,7 @@ export const SCREENSHOT_SPECS: ScreenshotSpec[] = [
   {
     id: 'language-selection',
     title: 'Language Switcher',
-    description: 'One-tap seamless switching between 12+ Indian native scripts and Hinglish transliteration.',
+    description: 'One-tap seamless switching between 14 languages and Hinglish transliteration.',
     imagePath: '/screenshots/bharat_keyboard_languages_1080x2400.png',
     recommendedDimensions: '1080 × 2400 px (Android 9:19.5)',
     badge: 'Multilingual',
@@ -450,7 +470,7 @@ export const FAQ_LIST: FAQItem[] = [
   {
     id: 'faq-2',
     question: 'Which Indian languages are currently supported?',
-    answer: 'We currently support 12 languages: Hindi, Odia, Urdu, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, and English (India). Support for Assamese, Maithili, Santali, Sanskrit, and more regional languages is actively in development.',
+    answer: 'We currently support 14 languages: Hindi, Odia, Urdu, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Assamese, Nepali, and English (India). Support for Maithili, Santali, Sanskrit, and more regional languages is actively in development.',
     category: 'Languages',
   },
   {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   X, 
@@ -11,9 +11,11 @@ import {
   Lock, 
   Trash2, 
   ExternalLink,
-  Smartphone
+  Smartphone,
+  QrCode
 } from 'lucide-react';
 import { AppConfig } from '../types';
+import { KeyboardEdition, LANGUAGE_EDITIONS, MAIN_EDITION } from '../data/editions';
 import { RippleButton, RippleLink } from './RippleButton';
 const logoImg = '/bharatai_keyboard_logo.png';
 
@@ -24,16 +26,36 @@ interface DownloadModalProps {
 }
 
 export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, config }) => {
+  const [selected, setSelected] = useState<KeyboardEdition>(MAIN_EDITION);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
+
+  const isMain = selected.slug === MAIN_EDITION.slug;
+  const storeUrl = isMain ? config.playStoreUrl : selected.playStoreUrl;
+  const label = isMain ? 'Bharat AI Keyboard' : `Bharat AI ${selected.name}`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+        onClick={onClose}
+      >
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="download-modal-title"
+          onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-md rounded-3xl bg-white p-6 sm:p-8 text-[#172033] shadow-2xl border border-slate-200"
+          className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl bg-white p-6 sm:p-8 text-[#172033] shadow-2xl border border-slate-200"
         >
           {/* Close Button */}
           <button
@@ -53,21 +75,100 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
                 referrerPolicy="no-referrer"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#172033]">Download Bharat AI Keyboard</h3>
-            <p className="text-xs text-slate-500 mt-1">Available free for Android 8.0 Oreo and newer</p>
+            <h3 id="download-modal-title" className="text-xl font-bold text-[#172033]">Download Bharat AI Keyboard</h3>
+            <p className="text-xs text-slate-500 mt-1">Free for Android 8.0 Oreo and newer</p>
+          </div>
+
+          {/* Edition picker */}
+          <div className="mt-5">
+            <div className="text-[11px] font-bold uppercase tracking-wide text-slate-500 mb-2">Choose your keyboard</div>
+            <div role="radiogroup" aria-label="Keyboard edition">
+              {/* All-in-one app */}
+              <button
+                type="button"
+                role="radio"
+                aria-checked={isMain}
+                onClick={() => setSelected(MAIN_EDITION)}
+                className={`flex w-full items-center justify-between rounded-xl border px-4 py-2.5 text-left transition-colors ${
+                  isMain
+                    ? 'border-[#000080] bg-[#000080] text-white shadow-sm'
+                    : 'border-slate-200 bg-white text-[#172033] hover:border-amber-300 hover:bg-amber-50'
+                }`}
+              >
+                <span>
+                  <span className="block text-sm font-bold">All languages</span>
+                  <span className={`block text-[11px] ${isMain ? 'text-white/70' : 'text-slate-500'}`}>
+                    One keyboard with every supported language
+                  </span>
+                </span>
+                {isMain && <CheckCircle2 className="h-4 w-4 shrink-0" />}
+              </button>
+
+              <div className="my-3 flex items-center gap-2 text-[11px] font-semibold text-slate-400">
+                <span className="h-px flex-1 bg-slate-200" />
+                or a single-language edition
+                <span className="h-px flex-1 bg-slate-200" />
+              </div>
+
+              {/* Language editions */}
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+                {LANGUAGE_EDITIONS.map((ed) => {
+                  const active = ed.slug === selected.slug;
+                  return (
+                    <button
+                      key={ed.slug}
+                      type="button"
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => setSelected(ed)}
+                      className={`flex flex-col items-center justify-center rounded-xl border px-1 py-2 text-center transition-colors ${
+                        active
+                          ? 'border-[#000080] bg-[#000080] text-white shadow-sm'
+                          : 'border-slate-200 bg-white text-[#172033] hover:border-amber-300 hover:bg-amber-50'
+                      }`}
+                    >
+                      <span className={`text-sm font-bold leading-tight ${ed.fontClass}`}>{ed.nativeName}</span>
+                      <span className={`mt-0.5 text-[10px] ${active ? 'text-white/70' : 'text-slate-500'}`}>{ed.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* QR (desktop) */}
+          <div className="mt-5 hidden sm:flex items-center gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <img
+              key={selected.qrPath}
+              src={selected.qrPath}
+              alt={`QR code to download ${label} from Google Play`}
+              width={128}
+              height={128}
+              className="h-32 w-32 shrink-0 rounded-lg border border-slate-200 bg-white p-1.5"
+            />
+            <div>
+              <div className="flex items-center gap-1.5 text-sm font-bold text-[#172033]">
+                <QrCode className="h-4 w-4 text-[#138808]" />
+                Scan to install
+              </div>
+              <div className="mt-1 text-base font-extrabold text-[#000080]">{label}</div>
+              <p className="mt-1 text-xs text-slate-500">
+                Point your Android phone’s camera at the code to open the Play Store listing.
+              </p>
+            </div>
           </div>
 
           {/* Direct Play Store Link */}
-          <div className="mt-6 space-y-2.5">
+          <div className="mt-5 space-y-2.5">
             <RippleLink
-              href={config.playStoreUrl}
+              href={storeUrl}
               target="_blank"
               rel="noopener noreferrer"
               rippleColor="rgba(255, 255, 255, 0.4)"
-              className="flex w-full items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-[#FF9933] to-[#138808] p-3 text-xs font-bold text-white shadow-md transition-shadow"
+              className="flex w-full items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-[#FF9933] to-[#138808] p-3 text-sm font-bold text-white shadow-md transition-shadow"
             >
               <Download className="h-4 w-4" />
-              <span>Open in Google Play Store</span>
+              <span>Get {label} on Google Play</span>
               <ExternalLink className="h-3 w-3 ml-1" />
             </RippleLink>
 

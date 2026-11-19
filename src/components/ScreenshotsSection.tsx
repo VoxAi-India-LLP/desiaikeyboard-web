@@ -184,7 +184,7 @@ export const WhyChooseSection: React.FC = () => {
     },
     {
       title: 'Multiple Indian Scripts',
-      desc: 'Native Unicode rendering across 12+ official Indian writing systems with accurate conjuncts.',
+      desc: 'Native Unicode rendering across 13 Indian languages and their scripts with accurate conjuncts.',
       icon: '✍️',
     },
     {

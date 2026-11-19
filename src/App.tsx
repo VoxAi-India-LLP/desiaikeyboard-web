@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
+import { LanguageShowcaseSection } from './components/LanguageShowcaseSection';
 import { FeaturesSection } from './components/FeaturesSection';
 import { MultilingualSection } from './components/MultilingualSection';
 import { AICommunicationSection } from './components/AICommunicationSection';
@@ -64,10 +65,13 @@ export default function App() {
           themeId={globalThemeId}
         />
 
+        {/* 1b. Language Editions showcase (Play Store featured graphics) */}
+        <LanguageShowcaseSection />
+
         {/* 2. Feature Overview (13 icon-based cards) */}
         <FeaturesSection />
 
-        {/* 3. Multilingual Support (12 Indian languages + Transliteration Playground) */}
+        {/* 3. Multilingual Support (14 languages + Transliteration Playground) */}
         <MultilingualSection />
 
         {/* 4. AI-Powered Communication (Workflow pipeline & connectivity notice) */}
