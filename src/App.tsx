@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { LanguageShowcaseSection } from './components/LanguageShowcaseSection';
@@ -24,12 +24,36 @@ import { DownloadModal, ContactModal, LegalModal } from './components/Modals';
 import { DEFAULT_CONFIG } from './data/content';
 import { AppConfig } from './types';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { LanguagePage } from './components/LanguagePage';
+import { NotFoundPage } from './components/NotFoundPage';
+import { getHead, resolveRoute, Route } from './seo';
 
-export default function App() {
-  if (window.location.pathname.replace(/\/$/, '') === '/privacy-policy') {
+/** Keeps title/description/canonical in sync on the client (static HTML already has them after prerender). */
+const useDocumentHead = (route: Route) => {
+  useEffect(() => {
+    const head = getHead(route);
+    document.title = head.title;
+    const set = (selector: string, attr: string, value: string) => {
+      const el = document.head.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+    set('meta[name="description"]', 'content', head.description);
+    set('meta[name="robots"]', 'content', head.robots);
+    set('link[rel="canonical"]', 'href', head.canonical);
+  }, [route.path]);
+};
+
+export default function App({ path }: { path?: string }) {
+  const route = resolveRoute(path ?? window.location.pathname);
+  useDocumentHead(route);
+
+  if (route.kind === 'privacy') {
     return <PrivacyPolicyPage />;
   }
+  return <SiteShell route={route} />;
+}
 
+function SiteShell({ route }: { route: Exclude<Route, { kind: 'privacy' }> }) {
   const [config] = useState<AppConfig>(DEFAULT_CONFIG);
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -51,12 +75,17 @@ export default function App() {
       
       {/* Sticky Header */}
       <Header
+        solid={route.kind !== 'home'}
         config={config}
         onOpenDownloadModal={() => setDownloadModalOpen(true)}
         onOpenContactModal={() => setContactModalOpen(true)}
       />
 
+      {route.kind === 'language' && <LanguagePage edition={route.edition} />}
+      {route.kind === 'notfound' && <NotFoundPage />}
+
       {/* Main Content Sections */}
+      {route.kind === 'home' && (
       <main className="flex-1">
         {/* 1. Hero Section */}
         <HeroSection
@@ -119,6 +148,7 @@ export default function App() {
           onOpenContactModal={() => setContactModalOpen(true)}
         />
       </main>
+      )}
 
       {/* 15. Footer */}
       <Footer

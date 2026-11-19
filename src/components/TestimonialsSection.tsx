@@ -107,14 +107,14 @@ export const FAQSection: React.FC<{ onOpenContactModal: () => void }> = ({ onOpe
                     />
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
+                  {/* Answer stays in the DOM (crawlable); closed answers are collapsed visually */}
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-200 ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                    aria-hidden={!isOpen}
+                  >
+                      <div className="overflow-hidden">
                         <div className="border-t border-slate-100 p-5 pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
                           {faq.answer}
                           <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400">
@@ -123,9 +123,8 @@ export const FAQSection: React.FC<{ onOpenContactModal: () => void }> = ({ onOpe
                             </span>
                           </div>
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      </div>
+                  </div>
                 </div>
               );
             })

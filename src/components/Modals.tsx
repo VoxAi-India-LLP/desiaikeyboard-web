@@ -15,7 +15,7 @@ import {
   QrCode
 } from 'lucide-react';
 import { AppConfig } from '../types';
-import { KeyboardEdition, LANGUAGE_EDITIONS, MAIN_EDITION } from '../data/editions';
+import { EditionOption, LANGUAGE_EDITIONS, MAIN_EDITION } from '../data/editions';
 import { RippleButton, RippleLink } from './RippleButton';
 const logoImg = '/bharatai_keyboard_logo.png';
 
@@ -26,7 +26,7 @@ interface DownloadModalProps {
 }
 
 export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, config }) => {
-  const [selected, setSelected] = useState<KeyboardEdition>(MAIN_EDITION);
+  const [selected, setSelected] = useState<EditionOption>(MAIN_EDITION);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -55,7 +55,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-3xl bg-white p-6 sm:p-8 text-[#172033] shadow-2xl border border-slate-200"
+          className="relative w-full max-w-lg sm:max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white p-6 sm:p-8 text-[#172033] shadow-2xl border border-slate-200"
         >
           {/* Close Button */}
           <button
@@ -66,8 +66,8 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
           </button>
 
           {/* Header */}
-          <div className="text-center">
-            <div className="mx-auto flex h-14 w-14 overflow-hidden items-center justify-center rounded-2xl bg-slate-900 shadow-md mb-3 border border-slate-200">
+          <div className="flex items-center gap-3 pr-10">
+            <div className="flex h-12 w-12 shrink-0 overflow-hidden items-center justify-center rounded-2xl bg-slate-900 shadow-md border border-slate-200">
               <img
                 src={logoImg}
                 alt="Bharat AI Keyboard"
@@ -75,12 +75,16 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
                 referrerPolicy="no-referrer"
               />
             </div>
-            <h3 id="download-modal-title" className="text-xl font-bold text-[#172033]">Download Bharat AI Keyboard</h3>
-            <p className="text-xs text-slate-500 mt-1">Free for Android 8.0 Oreo and newer</p>
+            <div>
+              <h3 id="download-modal-title" className="text-lg sm:text-xl font-bold text-[#172033]">Download Bharat AI Keyboard</h3>
+              <p className="text-xs text-slate-500 mt-0.5">Free for Android 8.0 Oreo and newer</p>
+            </div>
           </div>
 
+          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-[minmax(0,1fr)_250px]">
+
           {/* Edition picker */}
-          <div className="mt-5">
+          <div>
             <div className="text-[11px] font-bold uppercase tracking-wide text-slate-500 mb-2">Choose your keyboard</div>
             <div role="radiogroup" aria-label="Keyboard edition">
               {/* All-in-one app */}
@@ -137,29 +141,30 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
           </div>
 
           {/* QR (desktop) */}
-          <div className="mt-5 hidden sm:flex items-center gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <div className="flex flex-col">
+          <div className="hidden sm:flex flex-1 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-b from-amber-50/70 via-white to-emerald-50/60 p-5 text-center">
+            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-[#138808]">
+              <QrCode className="h-3.5 w-3.5" />
+              Scan to install
+            </div>
             <img
               key={selected.qrPath}
               src={selected.qrPath}
               alt={`QR code to download ${label} from Google Play`}
-              width={128}
-              height={128}
-              className="h-32 w-32 shrink-0 rounded-lg border border-slate-200 bg-white p-1.5"
+              width={176}
+              height={176}
+              className="mt-3 h-44 w-44 rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
             />
-            <div>
-              <div className="flex items-center gap-1.5 text-sm font-bold text-[#172033]">
-                <QrCode className="h-4 w-4 text-[#138808]" />
-                Scan to install
-              </div>
-              <div className="mt-1 text-base font-extrabold text-[#000080]">{label}</div>
-              <p className="mt-1 text-xs text-slate-500">
-                Point your Android phone’s camera at the code to open the Play Store listing.
-              </p>
+            <div className={`mt-3 text-base font-extrabold text-[#000080] ${isMain ? '' : selected.fontClass}`}>
+              {isMain ? 'Bharat AI Keyboard' : selected.nativeName}
+            </div>
+            <div className="text-[11px] text-slate-500">
+              {isMain ? 'All languages' : `${selected.name} edition`}
             </div>
           </div>
 
           {/* Direct Play Store Link */}
-          <div className="mt-5 space-y-2.5">
+          <div className="mt-4 space-y-2.5">
             <RippleLink
               href={storeUrl}
               target="_blank"
@@ -168,7 +173,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
               className="flex w-full items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-[#FF9933] to-[#138808] p-3 text-sm font-bold text-white shadow-md transition-shadow"
             >
               <Download className="h-4 w-4" />
-              <span>Get {label} on Google Play</span>
+              <span>Get it on Google Play</span>
               <ExternalLink className="h-3 w-3 ml-1" />
             </RippleLink>
 
@@ -179,6 +184,8 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, c
             >
               Close
             </RippleButton>
+          </div>
+          </div>
           </div>
         </motion.div>
       </div>

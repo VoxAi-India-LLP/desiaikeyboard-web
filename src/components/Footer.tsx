@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { AshokaChakra } from './AshokaChakra';
 import { AppConfig } from '../types';
+import { LANGUAGE_EDITIONS, editionPath } from '../data/editions';
 const logoImg = '/bharatai_keyboard_logo.png';
 
 interface FooterProps {
@@ -53,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 pb-12 border-b border-slate-800">
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
@@ -100,25 +101,26 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Features</h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#features" className="hover:text-white transition-colors">Smart Text & Transliteration</a></li>
-              <li><a href="#ways-to-input" className="hover:text-white transition-colors">Multilingual Voice Typing</a></li>
-              <li><a href="#ways-to-input" className="hover:text-white transition-colors">Handwriting Recognition</a></li>
-              <li><a href="#ai-tools" className="hover:text-white transition-colors">Inline Translation Bar</a></li>
-              <li><a href="#personalization" className="hover:text-white transition-colors">Desi Stickers & Memes</a></li>
-              <li><a href="#theme-gallery" className="hover:text-white transition-colors">Tricolour & Custom Themes</a></li>
+              <li><a href="/#features" className="hover:text-white transition-colors">Smart Text & Transliteration</a></li>
+              <li><a href="/#ways-to-input" className="hover:text-white transition-colors">Multilingual Voice Typing</a></li>
+              <li><a href="/#ways-to-input" className="hover:text-white transition-colors">Handwriting Recognition</a></li>
+              <li><a href="/#ai-tools" className="hover:text-white transition-colors">Inline Translation Bar</a></li>
+              <li><a href="/#personalization" className="hover:text-white transition-colors">Desi Stickers & Memes</a></li>
+              <li><a href="/#theme-gallery" className="hover:text-white transition-colors">Tricolour & Custom Themes</a></li>
             </ul>
           </div>
 
           {/* Languages Supported */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Supported Languages</h4>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#languages" className="hover:text-white transition-colors">Hindi (हिन्दी) & English</a></li>
-              <li><a href="#languages" className="hover:text-white transition-colors">Odia (ଓଡ଼ିଆ) & Bengali (বাংলা)</a></li>
-              <li><a href="#languages" className="hover:text-white transition-colors">Tamil (தமிழ்) & Telugu (తెలుగు)</a></li>
-              <li><a href="#languages" className="hover:text-white transition-colors">Marathi (मराठी) & Gujarati (ગુજરાતી)</a></li>
-              <li><a href="#languages" className="hover:text-white transition-colors">Kannada (ಕನ್ನಡ) & Malayalam (മലയാളം)</a></li>
-              <li><a href="#languages" className="hover:text-white transition-colors">Punjabi (ਪੰਜਾਬੀ) & Urdu (اردو)</a></li>
+          <div className="space-y-3 lg:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Language Keyboards</h4>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-slate-400">
+              {LANGUAGE_EDITIONS.map((e) => (
+                <li key={e.slug}>
+                  <a href={editionPath(e)} className="whitespace-nowrap hover:text-white transition-colors">
+                    {e.name} Keyboard
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

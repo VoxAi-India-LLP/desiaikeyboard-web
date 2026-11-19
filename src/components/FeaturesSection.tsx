@@ -702,19 +702,19 @@ export const FeaturesSection: React.FC = () => {
           {/* Quick Metrics Strip */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-xl font-black text-[#000080]">&lt; 15ms</span>
+              <span className="whitespace-nowrap text-base md:text-xl font-black text-[#000080]">&lt; 15ms</span>
               <span className="text-[11px] font-semibold text-slate-500">Latency Per Keypress</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-xl font-black text-[#138808]">100% On-Device</span>
+              <span className="whitespace-nowrap text-base md:text-xl font-black text-[#138808]">100% On-Device</span>
               <span className="text-[11px] font-semibold text-slate-500">Zero Keystroke Logging</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-xl font-black text-[#FF9933]">14 Languages</span>
-              <span className="text-[11px] font-semibold text-slate-500">Official Indian Languages</span>
+              <span className="whitespace-nowrap text-base md:text-xl font-black text-[#FF9933]">14 Languages</span>
+              <span className="text-[11px] font-semibold text-slate-500">13 Indian + English</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-xl font-black text-indigo-900">10,000+</span>
+              <span className="whitespace-nowrap text-base md:text-xl font-black text-indigo-900">10,000+</span>
               <span className="text-[11px] font-semibold text-slate-500">Desi Memes & Stickers</span>
             </div>
           </div>

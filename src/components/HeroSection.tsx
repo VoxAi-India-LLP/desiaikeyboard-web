@@ -113,7 +113,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600 font-normal"
             >
-              Type, speak, write, translate and express yourself in your preferred language-all from one intelligent Android keyboard built specifically for the rhythm of Indian conversations.
+              Type, speak, write, translate and express yourself in Hindi, Bengali, Tamil, Telugu, Marathi and 9 more languages — all from one free Android keyboard with Hinglish typing, voice typing and smart suggestions, built for the rhythm of Indian conversations.
             </motion.p>
 
             {/* Primary & Secondary Call to Actions */}

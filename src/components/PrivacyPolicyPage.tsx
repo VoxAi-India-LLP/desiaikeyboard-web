@@ -160,11 +160,6 @@ const sections = policyText.split('\n').reduce<Section[]>((result, line) => {
 
 export const PrivacyPolicyPage: React.FC = () => {
   useEffect(() => {
-    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    document.title = 'Privacy Policy | Bharat AI Keyboard';
-    if (canonical) canonical.href = 'https://bharataikeyboard.com/privacy-policy';
-    if (description) description.content = 'Read how Bharat AI Keyboard handles keyboard input, permissions, online services, and user data.';
     window.scrollTo(0, 0);
   }, []);
 

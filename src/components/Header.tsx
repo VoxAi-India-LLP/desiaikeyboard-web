@@ -20,12 +20,15 @@ interface HeaderProps {
   config: AppConfig;
   onOpenDownloadModal: () => void;
   onOpenContactModal: () => void;
+  /** Always show the solid header (pages whose top isn't the light home hero). */
+  solid?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   config,
   onOpenDownloadModal,
   onOpenContactModal,
+  solid = false,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,20 +47,20 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Languages', href: '#languages' },
-    { name: 'AI Tools', href: '#ai-tools' },
-    { name: 'Personalization', href: '#personalization' },
-    { name: 'Screenshots', href: '#screenshots' },
-    { name: 'FAQs', href: '#faqs' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Languages', href: '/#languages' },
+    { name: 'AI Tools', href: '/#ai-tools' },
+    { name: 'Personalization', href: '/#personalization' },
+    { name: 'Screenshots', href: '/#screenshots' },
+    { name: 'FAQs', href: '/#faqs' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
     <header
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || solid
           ? 'bg-[#FFFDF8]/95 backdrop-blur-md shadow-xs border-b border-amber-900/10 py-3'
           : 'bg-transparent py-4'
       }`}
@@ -67,11 +70,11 @@ export const Header: React.FC<HeaderProps> = ({
           
           {/* Logo & Brand Identity */}
           <a
-            href="#"
-            className="group flex items-center space-x-2.5 focus:outline-hidden"
+            href="/"
+            className="group flex min-w-0 items-center gap-2.5 focus:outline-hidden"
             aria-label="Bharat AI Keyboard Home"
           >
-            <div className="relative flex h-10 w-10 overflow-hidden items-center justify-center rounded-xl bg-slate-900 shadow-md transition-transform group-hover:scale-105 border border-slate-700/50">
+            <div className="relative flex h-10 w-10 shrink-0 overflow-hidden items-center justify-center rounded-xl bg-slate-900 shadow-md transition-transform group-hover:scale-105 border border-slate-700/50">
               <img
                 src={logoImg}
                 alt="Bharat AI Keyboard App Logo"
@@ -81,15 +84,15 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             <div className="flex flex-col">
-              <div className="flex items-center space-x-1.5">
-                <span className="text-lg font-extrabold tracking-tight text-[#172033]">
+              <div className="flex items-center gap-1.5 whitespace-nowrap">
+                <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#172033]">
                   Bharat AI
                 </span>
-                <span className="rounded-sm bg-gradient-to-r from-[#FF9933] to-[#138808] px-1.5 py-0.2 text-[10px] font-bold text-white uppercase tracking-wider">
+                <span className="max-[359px]:hidden rounded-sm bg-gradient-to-r from-[#FF9933] to-[#138808] px-1.5 py-0.2 text-[9px] sm:text-[10px] font-bold text-white uppercase tracking-wider">
                   Keyboard
                 </span>
               </div>
-              <span className="text-[10px] font-medium text-slate-500 flex items-center gap-1">
+              <span className="hidden sm:flex text-[10px] font-medium text-slate-500 items-center gap-1 whitespace-nowrap">
                 <AshokaChakra size={10} strokeColor="#000080" />
                 Type Smart • Express Bharat
               </span>
@@ -110,11 +113,11 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Action CTA & Mobile Trigger */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             
             {/* Quick Language Pill indicator */}
             <a
-              href="#languages"
+              href="/#languages"
               className="hidden sm:flex items-center space-x-1.5 text-xs font-medium text-slate-600 bg-amber-500/10 border border-amber-500/30 px-2.5 py-1.5 rounded-full hover:bg-amber-500/20 transition-colors"
             >
               <Globe className="h-3.5 w-3.5 text-[#FF9933]" />
@@ -128,12 +131,13 @@ export const Header: React.FC<HeaderProps> = ({
               rel="noopener noreferrer"
               id="header-download-btn"
               rippleColor="rgba(255, 255, 255, 0.4)"
-              className="group relative inline-flex items-center justify-center space-x-2 rounded-full bg-gradient-to-r from-[#000080] via-[#0F172A] to-[#172033] px-4 sm:px-5 py-2 text-xs font-bold text-white shadow-md hover:shadow-lg transition-shadow"
+              className="group relative inline-flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#000080] via-[#0F172A] to-[#172033] px-3.5 sm:px-5 py-2 text-xs font-bold text-white shadow-md hover:shadow-lg transition-shadow"
             >
               {/* Subtle Tricolour Edge Highlight */}
               <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FF9933] via-white to-[#138808]"></span>
               <Download className="h-3.5 w-3.5 text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
-              <span>Get on Play Store</span>
+              <span className="sm:hidden">Install</span>
+              <span className="hidden sm:inline">Get on Play Store</span>
             </RippleLink>
 
             {/* Mobile Hamburger Button */}

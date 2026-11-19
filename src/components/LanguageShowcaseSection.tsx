@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
-import { ChevronLeft, ChevronRight, ExternalLink, Languages, Pause, Play, ScanLine } from 'lucide-react';
-import { LANGUAGE_EDITIONS } from '../data/editions';
+import { ChevronLeft, ChevronRight, Languages, Pause, Play, ScanLine } from 'lucide-react';
+import { LANGUAGE_EDITIONS, editionPath } from '../data/editions';
 
 const SHOWCASE_LANGUAGES = LANGUAGE_EDITIONS.filter((e) => e.bannerPath);
 const AUTO_ADVANCE_MS = 4500;
@@ -97,12 +97,12 @@ export const LanguageShowcaseSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Language chips */}
+        {/* Language chips: swipeable row on phones, even 4- / 6-column grid on larger screens */}
         <div
           role="tablist"
           aria-label="Choose a language"
           onKeyDown={onKeyDown}
-          className="mt-10 -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-auto sm:grid sm:max-w-4xl sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {SHOWCASE_LANGUAGES.map((lang, i) => {
             const isActive = i === index;
@@ -121,14 +121,14 @@ export const LanguageShowcaseSection: React.FC = () => {
                   setUserPaused(true);
                   goTo(i);
                 }}
-                className={`relative shrink-0 overflow-hidden rounded-full border px-4 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
+                className={`relative flex shrink-0 flex-col items-center justify-center overflow-hidden rounded-xl border px-4 py-2 text-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 sm:px-2 ${
                   isActive
                     ? 'bg-white text-[#0B1F7A] border-white shadow-lg'
-                    : 'bg-white/5 text-blue-50 border-white/20 hover:bg-white/15'
+                    : 'bg-white/[0.06] text-white border-white/15 hover:bg-white/15 hover:border-white/30'
                 }`}
               >
-                <span className={`font-bold ${lang.fontClass}`}>{lang.nativeName}</span>
-                <span className={`ml-1.5 text-xs ${isActive ? 'text-slate-500' : 'text-blue-200/70'}`}>
+                <span className={`text-base font-bold leading-tight ${lang.fontClass}`}>{lang.nativeName}</span>
+                <span className={`mt-0.5 text-[11px] ${isActive ? 'text-slate-500' : 'text-blue-200/70'}`}>
                   {lang.name}
                 </span>
                 {isActive && playing && (
@@ -146,131 +146,143 @@ export const LanguageShowcaseSection: React.FC = () => {
           })}
         </div>
 
-        {/* Banner stage */}
+        {/* Banner + download card (hovering anywhere here pauses the slideshow so the QR stays put while scanning) */}
         <div
-          className="relative mx-auto mt-8 max-w-5xl"
+          className="mt-8 grid grid-cols-1 items-stretch gap-5 lg:grid-cols-[minmax(0,1fr)_300px]"
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
           onFocusCapture={() => setHovering(true)}
           onBlurCapture={() => setHovering(false)}
         >
-          <div
-            id="edition-panel"
-            role="tabpanel"
-            aria-labelledby={`edition-tab-${active.slug}`}
-            aria-live={playing ? 'off' : 'polite'}
-            className="relative aspect-[1024/500] overflow-hidden rounded-2xl sm:rounded-3xl bg-[#0B1F7A] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/20"
-          >
-            <AnimatePresence initial={false} custom={direction} mode="popLayout">
-              <motion.img
-                key={active.slug}
-                src={imageSrc(active.slug)}
-                alt={`Bharat AI ${active.name} keyboard: type in English letters and get ${active.name} script instantly, with next-word suggestions and voice typing`}
-                width={1024}
-                height={500}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-                draggable={false}
-                custom={direction}
-                variants={slide}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: reduceMotion ? 0.2 : 0.45, ease: [0.22, 1, 0.36, 1] }}
-                drag={reduceMotion ? false : 'x'}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(_, info) => {
-                  if (Math.abs(info.offset.x) < 60) return;
-                  setUserPaused(true);
-                  goTo(index + (info.offset.x < 0 ? 1 : -1), info.offset.x < 0 ? 1 : -1);
-                }}
-                className="absolute inset-0 h-full w-full select-none object-cover cursor-grab active:cursor-grabbing"
-              />
-            </AnimatePresence>
+          {/* Banner stage */}
+          <div className="relative self-center">
+            <div
+              id="edition-panel"
+              role="tabpanel"
+              aria-labelledby={`edition-tab-${active.slug}`}
+              aria-live={playing ? 'off' : 'polite'}
+              className="relative aspect-[1024/500] overflow-hidden rounded-2xl sm:rounded-3xl bg-[#0B1F7A] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/20"
+            >
+              <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                <motion.img
+                  key={active.slug}
+                  src={imageSrc(active.slug)}
+                  alt={`Bharat AI ${active.name} keyboard: type in English letters and get ${active.name} script instantly, with next-word suggestions and voice typing`}
+                  width={1024}
+                  height={500}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  draggable={false}
+                  custom={direction}
+                  variants={slide}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: reduceMotion ? 0.2 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  drag={reduceMotion ? false : 'x'}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_, info) => {
+                    if (Math.abs(info.offset.x) < 60) return;
+                    setUserPaused(true);
+                    goTo(index + (info.offset.x < 0 ? 1 : -1), info.offset.x < 0 ? 1 : -1);
+                  }}
+                  className="absolute inset-0 h-full w-full select-none object-cover cursor-grab active:cursor-grabbing"
+                />
+              </AnimatePresence>
+            </div>
+
+            {/* Prev / next */}
+            <button
+              type="button"
+              aria-label="Previous language"
+              onClick={() => {
+                setUserPaused(true);
+                goTo(index - 1, -1);
+              }}
+              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-[#0B1F7A] shadow-lg hover:bg-white focus-visible:outline-2 focus-visible:outline-amber-300"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next language"
+              onClick={() => {
+                setUserPaused(true);
+                goTo(index + 1, 1);
+              }}
+              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-[#0B1F7A] shadow-lg hover:bg-white focus-visible:outline-2 focus-visible:outline-amber-300"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
 
-          {/* Prev / next */}
-          <button
-            type="button"
-            aria-label="Previous language"
-            onClick={() => {
-              setUserPaused(true);
-              goTo(index - 1, -1);
-            }}
-            className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/90 text-[#0B1F7A] shadow-lg hover:bg-white focus-visible:outline-2 focus-visible:outline-amber-300"
+          {/* Download card */}
+          <aside
+            aria-label={`Download Bharat AI ${active.name}`}
+            className="flex flex-col items-center rounded-2xl sm:rounded-3xl bg-white p-5 text-center text-[#172033] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] sm:flex-row sm:text-left lg:flex-col lg:justify-center lg:text-center"
           >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next language"
-            onClick={() => {
-              setUserPaused(true);
-              goTo(index + 1, 1);
-            }}
-            className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/90 text-[#0B1F7A] shadow-lg hover:bg-white focus-visible:outline-2 focus-visible:outline-amber-300"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-
-        {/* Download bar for the active edition (hovering pauses the slideshow so the QR stays put while scanning) */}
-        <div
-          className="mx-auto mt-6 flex max-w-5xl flex-col items-center gap-4 rounded-2xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-sm sm:flex-row sm:gap-5 sm:p-5"
-          onMouseEnter={() => setHovering(true)}
-          onMouseLeave={() => setHovering(false)}
-        >
-          {/* QR: only useful on larger screens — on a phone you can't scan your own screen */}
-          <div className="hidden md:block shrink-0 rounded-xl bg-white p-2 shadow-lg">
-            <img
-              key={active.qrPath}
-              src={active.qrPath}
-              alt={`QR code to download Bharat AI ${active.name} keyboard from Google Play`}
-              width={112}
-              height={112}
-              className="h-28 w-28"
-            />
-          </div>
-
-          <div className="flex-1 text-center sm:text-left">
-            <div className="flex items-center justify-center gap-3 sm:justify-start">
-              {!reduceMotion && (
-                <button
-                  type="button"
-                  onClick={() => setUserPaused((p) => !p)}
-                  aria-label={userPaused ? 'Play slideshow' : 'Pause slideshow'}
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 hover:bg-white/15"
-                >
-                  {userPaused ? <Play className="h-3 w-3" /> : <Pause className="h-3 w-3" />}
-                </button>
-              )}
-              <span className="text-lg font-bold text-white">
-                Bharat AI <span className={active.fontClass}>{active.nativeName}</span>
+            <div className="flex w-full items-center justify-between sm:hidden lg:flex">
+              <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#138808] border border-emerald-200">
+                Free on Android
               </span>
-              <span className="text-xs tabular-nums text-blue-200/70">
+              <span className="text-xs font-semibold tabular-nums text-slate-400">
                 {index + 1} / {count}
               </span>
             </div>
-            <p className="mt-1.5 text-sm text-blue-100/80">
-              <ScanLine className="mr-1 hidden h-4 w-4 align-[-3px] md:inline" />
-              <span className="hidden md:inline">Scan with your phone camera to install the {active.name} keyboard.</span>
-              <span className="md:hidden">Install the {active.name} keyboard free from Google Play.</span>
-            </p>
-          </div>
 
-          <a
-            href={active.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#FF9933] px-6 py-3 text-sm font-bold text-[#172033] shadow-lg shadow-black/20 transition hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-              <path d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.2V3c0-.5.2-.9.6-1.2Zm11.2 11.2 2.5 2.5-11.8 6.8 9.3-9.3Zm2.5-2.1-2.5 2.5L5.5 4.1l11.8 6.8Zm1.2.7 2.6 1.5c.8.5.8 1.3 0 1.8l-2.6 1.5-2.7-2.6 2.7-2.2Z" />
-            </svg>
-            Get {active.name} on Google Play
-            <ExternalLink className="h-3.5 w-3.5 opacity-70" />
-          </a>
+            {/* QR: only useful on larger screens; on a phone you can't scan your own screen */}
+            <div className="hidden md:block shrink-0 rounded-2xl border border-slate-200 p-2 lg:mt-4">
+              <img
+                key={active.qrPath}
+                src={active.qrPath}
+                alt={`QR code to download Bharat AI ${active.name} keyboard from Google Play`}
+                width={160}
+                height={160}
+                className="h-28 w-28 lg:h-40 lg:w-40"
+              />
+            </div>
+
+            <div className="mt-3 flex-1 sm:mt-0 md:ml-5 lg:ml-0 lg:mt-3 lg:flex-none">
+              <div className="text-xs font-semibold text-slate-500">Bharat AI Keyboard</div>
+              <div className={`text-2xl font-extrabold text-[#000080] ${active.fontClass}`}>{active.nativeName}</div>
+              <p className="mt-1 text-xs text-slate-500">
+                <ScanLine className="mr-1 hidden h-3.5 w-3.5 align-[-2px] md:inline" />
+                <span className="hidden md:inline">Scan with your phone camera to install</span>
+                <span className="md:hidden">Install the {active.name} keyboard from Google Play</span>
+              </p>
+            </div>
+
+            <a
+              href={active.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-[#172033] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:bg-[#000080] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:mt-0 sm:ml-5 sm:w-auto lg:ml-0 lg:mt-4 lg:w-full"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#FF9933]" fill="currentColor" aria-hidden="true">
+                <path d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.2V3c0-.5.2-.9.6-1.2Zm11.2 11.2 2.5 2.5-11.8 6.8 9.3-9.3Zm2.5-2.1-2.5 2.5L5.5 4.1l11.8 6.8Zm1.2.7 2.6 1.5c.8.5.8 1.3 0 1.8l-2.6 1.5-2.7-2.6 2.7-2.2Z" />
+              </svg>
+              Get it on Google Play
+            </a>
+
+            <a
+              href={editionPath(active)}
+              className="mt-3 text-xs font-semibold text-[#000080] hover:underline sm:mt-0 sm:ml-5 lg:ml-0 lg:mt-3"
+            >
+              More about the {active.name} keyboard →
+            </a>
+
+            {!reduceMotion && (
+              <button
+                type="button"
+                onClick={() => setUserPaused((p) => !p)}
+                className="mt-3 hidden items-center gap-1.5 text-[11px] font-semibold text-slate-400 hover:text-slate-700 lg:inline-flex"
+              >
+                {userPaused ? <Play className="h-3 w-3" /> : <Pause className="h-3 w-3" />}
+                {userPaused ? 'Resume slideshow' : 'Pause slideshow'}
+              </button>
+            )}
+          </aside>
         </div>
       </div>
     </section>

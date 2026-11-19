@@ -531,7 +531,7 @@ export const AIAutocompleteSandbox: React.FC = () => {
               <span className="text-[11px] font-semibold text-slate-400">Keystrokes Reduced</span>
             </div>
             <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-center">
-              <span className="block text-xl font-black text-sky-400">100% On-Device</span>
+              <span className="block whitespace-nowrap text-lg md:text-xl font-black text-sky-400">100% On-Device</span>
               <span className="text-[11px] font-semibold text-slate-400">Local Neural Weights</span>
             </div>
             <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-center">
